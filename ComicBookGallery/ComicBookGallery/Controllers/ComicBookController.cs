@@ -13,5 +13,17 @@ namespace ComicBookGallery.Controllers
         {
             return View();
         }
+
+        public ActionResult Details()
+        {
+            if(DateTime.Today.DayOfWeek == DayOfWeek.Monday)
+            {
+                return new RedirectResult("/");
+            }
+            return new ContentResult()
+            {
+                Content = "Hello new content!"
+            };
+        }
     }
 }
